@@ -1,0 +1,29 @@
+
+{% extends 'journal/base.html' %}
+
+{% block content %}
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Title</th>
+      <th scope="col">Acción</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for new in object_list %}
+      <tr>
+        <th scope="row">{{new.id}}</th>
+        <td>{{new.title}}</td>
+        <td><a class="btn btn-prymary btn-sm" href="{% url 'new-update' pk=new.pk %}">Editar</a><a class="btn btn-prymary btn-sm" href="{% url 'new-delete' pk=new.pk %}">Eliminar</a></td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+  
+        
+  
+
+{% endblock %}
+

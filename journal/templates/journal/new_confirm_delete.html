@@ -1,0 +1,12 @@
+
+{% extends 'journal/base.html' %}
+
+{% block content %}
+
+<form method="post">{% csrf_token %}
+  <p>Esta seguro de elimninar este objeto? "{{ object }}"?</p>
+  <input type="submit" value="Confirm">
+</form>
+
+{% endblock %}
+
